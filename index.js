@@ -1,12 +1,12 @@
 const express = require("express");
 require("dotenv").config();
 const app = express();
-require("./db")
+require("./server/db")
 const port = process.env.PORT || 5000;
 
-const usersRoute = require("./routes/usersRoute");
-const chatsRoute = require("./routes/chatsRoute");
-const messagesRoute = require("./routes/messagesRoute");
+const usersRoute = require("./server/routes/usersRoute");
+const chatsRoute = require("./server/routes/chatsRoute");
+const messagesRoute = require("./server/routes/messagesRoute");
 app.use(
   express.json({
     limit: "50mb",
