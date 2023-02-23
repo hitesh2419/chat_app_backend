@@ -1,9 +1,7 @@
 const express = require("express");
 require("dotenv").config();
-const app = express();
 require("./server/db")
-const port = process.env.PORT || 5000;
-
+const app = express();
 const usersRoute = require("./server/routes/usersRoute");
 const chatsRoute = require("./server/routes/chatsRoute");
 const messagesRoute = require("./server/routes/messagesRoute");
@@ -12,7 +10,7 @@ app.use(
     limit: "50mb",
   })
 );
-
+const port = process.env.PORT || 5000;
 const server = require("http").createServer(app);
 
 const io = require("socket.io")(server, {
