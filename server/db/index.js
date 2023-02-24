@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-mongoose.set("strictQuery", false);
 
+mongoose.set("strictQuery", false);
 mongoose
-  .connect(process.env.MONGO_URL,{ useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Mongo DB Connection Successfull");
   })
